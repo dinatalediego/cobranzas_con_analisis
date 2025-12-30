@@ -1,0 +1,79 @@
+name: Cobranzas — Daily (Artifacts + Email)
+
+on:
+  workflow_dispatch:
+  schedule:
+    # 07:00 Lima ~= 12:00 UTC
+    - cron: "0 12 * * *"
+
+jobs:
+  cobranzas_daily:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run pipeline (extract → transform → report)
+        env:
+          REDSHIFT_HOST: ${{ secrets.REDSHIFT_HOST }}
+          REDSHIFT_PORT: ${{ secrets.REDSHIFT_PORT }}
+          REDSHIFT_DB: ${{ secrets.REDSHIFT_DB }}
+          REDSHIFT_USER: ${{ secrets.REDSHIFT_USER }}
+          REDSHIFT_PASSWORD: ${{ secrets.REDSHIFT_PASSWORD }}
+        run: |
+          python -m src.pipeline --excel data/inputs/pagos.xlsx --out artifacts --snapshot
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: cobranzas-artifacts
+          path: artifacts/
+
+      - name: Prepare email body (include summary)
+        id: body
+        run: |
+          delim="DELIM_$(date +%s)"
+          echo "body<<$delim" >> "$GITHUB_OUTPUT"
+          echo "Cobranzas Daily — reporte generado ✅" >> "$GITHUB_OUTPUT"
+          echo "" >> "$GITHUB_OUTPUT"
+          echo "Repo:   $GITHUB_REPOSITORY" >> "$GITHUB_OUTPUT"
+          echo "Commit: $GITHUB_SHA" >> "$GITHUB_OUTPUT"
+          echo "Run:    $GITHUB_RUN_ID" >> "$GITHUB_OUTPUT"
+          echo "" >> "$GITHUB_OUTPUT"
+          echo "Resumen:" >> "$GITHUB_OUTPUT"
+          echo "" >> "$GITHUB_OUTPUT"
+          if [ -f artifacts/cobranzas_summary.md ]; then
+            cat artifacts/cobranzas_summary.md >> "$GITHUB_OUTPUT"
+          else
+            echo "(No se encontró cobranzas_summary.md)" >> "$GITHUB_OUTPUT"
+          fi
+          echo "" >> "$GITHUB_OUTPUT"
+          if [ -f artifacts/cobranzas_items_report.csv ]; then
+            echo "Nota: Se generó también cobranzas_items_report.csv (item-level)." >> "$GITHUB_OUTPUT"
+          fi
+          echo "" >> "$GITHUB_OUTPUT"
+          echo "Artefactos: ver Actions → Artifacts → cobranzas-artifacts" >> "$GITHUB_OUTPUT"
+          echo "$delim" >> "$GITHUB_OUTPUT"
+
+      - name: Send email via Gmail SMTP
+        uses: hilarion5/send-mail@v1
+        with:
+          smtp-server: smtp.gmail.com
+          smtp-port: 587
+          smtp-secure: false
+          from-email: ${{ secrets.SMTP_USERNAME }}
+          to-email: ${{ secrets.EMAIL_TO_1 }}
+          username: ${{ secrets.SMTP_USERNAME }}
+          password: ${{ secrets.SMTP_PASSWORD }}
+          subject: "Cobranzas Daily — #${{ github.run_number }}"
+          body: ${{ steps.body.outputs.body }}

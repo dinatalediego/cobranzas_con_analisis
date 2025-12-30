@@ -1,0 +1,17 @@
+python-dotenv
+pandas==2.2.3
+openpyxl==3.1.5
+sqlalchemy==2.0.36
+psycopg2-binary==2.9.10
+pydantic==2.9.2
+pyyaml==6.0.2
+python-pptx==1.0.2
+python-dateutil>=2.8
+redshift-connector
+reportlab
+pyarrow
+
+numpy>=1.26
+scikit-learn>=1.5
+python-dateutil>=2.9
+joblib>=1.4

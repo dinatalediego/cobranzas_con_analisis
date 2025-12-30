@@ -1,0 +1,30 @@
+codigo_proforma,tipo_item,codigo_item,precio_item,cliente,proyecto,asesor,total_pagado,n_pagos,fecha_ultimo_pago,deuda_item,avance_item_pct
+2025-0007651,departamento,EEUU-1201,677000.0,EDWIN WILBER BELTRAN ROJAS,Edificio Urbanzen,Karlo  Vargas,0.0,0,,677000.0,0.0
+2024-01258,departamento,EEUU-901,626594.32,JOSE MARTIN JUNES RENGIFO,Edificio Urbanzen,Nelly Román Villavicencio,0.0,0,,626594.32,0.0
+2024-01258,estacionamiento,E11,55000.0,JOSE MARTIN JUNES RENGIFO,Edificio Urbanzen,Nelly Román Villavicencio,0.0,0,,55000.0,0.0
+2025-0007922,departamento,EEUU-602,652600.0,Luz Marina Torres Peña,Edificio Urbanzen,Antonio Martinez,0.0,0,,652600.0,0.0
+2025-0007922,estacionamiento,E25,67600.0,Luz Marina Torres Peña,Edificio Urbanzen,Antonio Martinez,0.0,0,,67600.0,0.0
+2024-01877,departamento,EEUU-802,554833.02,NADIA GUERRA PONCE DE LEON,Edificio Urbanzen,Nelly Román Villavicencio,0.0,0,,554833.02,0.0
+2024-01877,estacionamiento,E21,48700.0,NADIA GUERRA PONCE DE LEON,Edificio Urbanzen,Nelly Román Villavicencio,0.0,0,,48700.0,0.0
+2024-02726,departamento,EEUU-1101,634769.85,BETTY PEÑA,Edificio Urbanzen,Nelly Román Villavicencio,0.0,0,,634769.85,0.0
+2024-02726,estacionamiento,E28,45500.0,BETTY PEÑA,Edificio Urbanzen,Nelly Román Villavicencio,0.0,0,,45500.0,0.0
+2024-02726,deposito,D6,15500.0,BETTY PEÑA,Edificio Urbanzen,Nelly Román Villavicencio,0.0,0,,15500.0,0.0
+2025-03353,departamento,EEUU-1104,590000.0,José Pedro Lunarejo Villagómez,Edificio Urbanzen,Antonio Martinez,0.0,0,,590000.0,0.0
+2025-03353,estacionamiento,E30,45500.0,José Pedro Lunarejo Villagómez,Edificio Urbanzen,Antonio Martinez,0.0,0,,45500.0,0.0
+2025-0008593,departamento,EEUU-1502,602675.36,Daniel Alfredo Alcas Seminario,Edificio Urbanzen,Ricardo Olaya,0.0,0,,602675.36,0.0
+2025-0008593,estacionamiento,E42,46100.0,Daniel Alfredo Alcas Seminario,Edificio Urbanzen,Ricardo Olaya,0.0,0,,46100.0,0.0
+2025-0008333,departamento,MT-A908,441234.89,Ingrid Yuly Valencia Marttey,Matera,Katy  Vasquez,0.0,0,,441234.89,0.0
+2025-0008333,estacionamiento,A46,43475.0,Ingrid Yuly Valencia Marttey,Matera,Katy  Vasquez,0.0,0,,43475.0,0.0
+2025-0008807,departamento,SL-1108,381359.95,Geraldine Paula Laberian Onofre,Sialia,Karlo  Vargas,0.0,0,,381359.95,0.0
+2025-07527,departamento,MD-101,430000.0,Serafin Guerra carhuapoma,Modena,Yomira  Pacheco,0.0,0,,430000.0,0.0
+2025-0008389,departamento,MT-A706,315752.0,rosa liz rucano taya,Matera,Percy Soto,0.0,0,,315752.0,0.0
+2025-0008889,departamento,NP-A2010,195000.0,FLAVIA FELICITA LA RIVA VENERO,Torre Nápoles,Ivan La Riva,0.0,0,,195000.0,0.0
+2025-0008618,departamento,SL-1402,335378.12,Sergio Andree Hinostroza Hinostroza,Sialia,Karlo  Vargas,0.0,0,,335378.12,0.0
+2025-0008621,departamento,MD-402,532096.95,MARIA DEL CARMEN YANA CAMPOS,Modena,Nelly Román Villavicencio,0.0,0,,532096.95,0.0
+2025-07093,departamento,EEUU-1304,610000.0,JULIANA FAITH,Edificio Urbanzen,Nelly Román Villavicencio,0.0,0,,610000.0,0.0
+2025-07093,estacionamiento,E40,40152.0,JULIANA FAITH,Edificio Urbanzen,Nelly Román Villavicencio,0.0,0,,40152.0,0.0
+2025-0008139,departamento,NP-A1502,296727.37,Shirley Paola Siade Huerta,Torre Nápoles,Ivan La Riva,0.0,0,,296727.37,0.0
+2025-0008814,departamento,SL-1201,245000.0,Linda Robertina Muñoz Quispe,Sialia,Antonio Martinez,0.0,0,,245000.0,0.0
+2025-0008747,departamento,NP-A1702,342762.75,ROXANA VALLEJOS,Torre Nápoles,Ivan La Riva,0.0,0,,342762.75,0.0
+2025-0008747,estacionamiento,E14,46250.0,ROXANA VALLEJOS,Torre Nápoles,Ivan La Riva,0.0,0,,46250.0,0.0
+2025-0008810,departamento,MD-1107,330907.55,Samantha Sanchez,Modena,Ivan La Riva,0.0,0,,330907.55,0.0

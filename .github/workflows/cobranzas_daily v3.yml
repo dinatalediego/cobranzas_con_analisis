@@ -1,0 +1,32 @@
+name: cobranzas_daily v3
+
+on:
+  schedule:
+    - cron: "0 11 * * *"  # 06:00 America/Lima (UTC-5) aprox
+  workflow_dispatch:
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    env:
+      ANON_SALT: ${{ secrets.ANON_SALT }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install deps
+        run: |
+          pip install -r requirements.txt
+
+      - name: Run pipeline (CSV example)
+        run: |
+          python -m src.pipeline --csv data/pagos_input.csv --out artifacts/latest
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: cobranzas_artifacts
+          path: artifacts/latest/*

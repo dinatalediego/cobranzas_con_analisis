@@ -194,7 +194,6 @@ LEFT JOIN proy pr
   ON pr.codigo = fb.codigo_proyecto
 LEFT JOIN p
   ON p.codigo_proforma = fb.codigo_proforma
-WHERE fb.fecha_minuta >= DATE '2022-01-01'
+WHERE fb.fecha_minuta >= DATE '2025-12-01'
   AND fb.estado = 'Activo'
-  AND fb.proyecto = 'Edificio Urbanzen'
 ORDER BY fb.fecha_minuta ASC;

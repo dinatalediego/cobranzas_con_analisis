@@ -224,7 +224,6 @@ def main():
     print("OK: pipeline completo. Revisa artifacts/")
 
 """ - """
-from __future__ import annotations
 
 import os
 from pathlib import Path
